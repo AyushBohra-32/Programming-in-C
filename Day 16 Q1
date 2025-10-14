@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int decimal_num;
+    int binary_array[32]; // Assuming a 32-bit integer, adjust if needed
+    int i = 0;
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal_num);
+
+    if (decimal_num == 0) {
+        printf("Binary representation: 0\n");
+        return 0;
+    }
+
+    // Convert decimal to binary
+    while (decimal_num > 0) {
+        binary_array[i] = decimal_num % 2;
+        decimal_num /= 2;
+        i++;
+    }
+
+    // Print the binary representation in reverse order
+    printf("Binary representation: ");
+    for (int j = i - 1; j >= 0; j--) {
+        printf("%d", binary_array[j]);
+    }
+    printf("\n");
+
+    return 0;
+}
