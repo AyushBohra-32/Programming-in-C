@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+// Function to reverse characters from index 'start' to 'end'
+void reverse(char str[], int start, int end) {
+    char temp;
+    while (start < end) {
+        temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+        start++;
+        end--;
+    }
+}
+
+int main() {
+    char str[200];
+    int i = 0, start = 0;
+
+    printf("Enter a sentence: ");
+    fgets(str, sizeof(str), stdin);
+
+    // Remove newline character if present
+    str[strcspn(str, "\n")] = '\0';
+
+    while (str[i] != '\0') {
+        if (!isspace(str[i])) {
+            start = i;
+            while (str[i] != '\0' && !isspace(str[i])) {
+                i++;
+            }
+            reverse(str, start, i - 1); // Reverse the word
+        } else {
+            i++;
+        }
+    }
+
+    printf("Sentence with each word reversed:\n%s\n", str);
+    return 0;
+}
