@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int areAnagrams(char str1[], char str2[]) {
+    int count[26] = {0}; // For lowercase letters a–z
+    int i;
+
+    // First, check if lengths match
+    if (strlen(str1) != strlen(str2))
+        return 0;
+
+    // Count characters from
