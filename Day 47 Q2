@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char str[200];
+    char longest[50];
+    int maxLen = 0, currLen = 0;
+    int i, start = 0, longest
