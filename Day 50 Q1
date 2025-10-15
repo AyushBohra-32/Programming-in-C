@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char date[20];
+    char formatted[30];
+    char day[3], year[5];
+
+    printf("Enter date in dd/04/yyyy format: ");
+    scanf("%
